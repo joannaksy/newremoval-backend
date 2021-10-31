@@ -1,10 +1,10 @@
 var express = require("express");
 var nodemailer = require('nodemailer');
 var inlineBase64 = require('nodemailer-plugin-inline-base64');
-const app = express()
-const port = process.env.PORT || 9000
 
+require("dotenv").config();
 
+var router = express.Router();
 
 
 let transporter = nodemailer.createTransport({
@@ -139,7 +139,7 @@ const emailMessage=(e)=>{
     return message;
 }
 
-app.post("/", function(req, res, next) {
+router.post("/", function(req, res, next) {
     console.log(req.body);
 
     let mailOptions = {
@@ -163,10 +163,8 @@ app.post("/", function(req, res, next) {
 });
 
 
-app.get('/', function(req, res, next) {
+router.get('/send', function(req, res, next) {
     res.send('respond with a resource');
   });
 
-  app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`)
-  })
+module.exports = router;
