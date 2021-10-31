@@ -1,8 +1,12 @@
 var express = require("express");
+
 var nodemailer = require('nodemailer');
 var inlineBase64 = require('nodemailer-plugin-inline-base64');
 
-require("dotenv").config();
+if (process.env.NODE_ENV !== 'production') { 
+    require('dotenv').config() 
+}
+
 
 var router = express.Router();
 
