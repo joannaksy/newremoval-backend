@@ -1,7 +1,6 @@
 {
-  "name": "api",
-  "version": "0.0.0",
-  "private": true,
+  "name": "newremoval-backend",
+  "version": "1.0.0",
   "engines": {
     "node": "14.x"
   },
