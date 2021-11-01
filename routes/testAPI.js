@@ -10,6 +10,8 @@ if (process.env.NODE_ENV !== 'production') {
 
 var router = express.Router();
 
+console.log(process.env.EMAIL)
+console.log(process.env.WORD)
 
 let transporter = nodemailer.createTransport({
     service: "Hotmail",
@@ -146,6 +148,8 @@ const emailMessage=(e)=>{
 }
 
 router.post("/send", function(req, res, next) {
+
+    
     console.log(req.body);
 
     let mailOptions = {
