@@ -92,6 +92,7 @@ const emailMessage=(e)=>{
 
     if(e.QuoteType)
     {
+        console.log(typeof(e.Kitchens));
         
         let kitchens = e.Kitchens.filter(function (f){
             return f.amount > 0;
