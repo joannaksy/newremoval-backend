@@ -37,6 +37,23 @@ const emailMessage=(e)=>{
     let itemMsg = '';
     let enddate ='';
     let moveto ='';
+
+    
+    let pickDes = '';
+    if (e.PickStair)
+        pickDes += '* 沒有電梯 ';
+    if (e.PickPlatform)
+        pickDes += '* 需經平台或樓梯轉電梯 ';
+    if (e.PickFar)
+        pickDes += '* 停車位置距離太遠(50米) ';
+
+    let dropDes = '';
+    if (e.DropStair)
+        dropDes += '* 沒有電梯 ';
+    if (e.DropPlatform)
+        dropDes += '* 需經平台或樓梯轉電梯 ';
+    if (e.DropFar)
+        dropDes += '* 停車位置距離太遠(50米) ';
     
 
     if(e.ServiceType){
@@ -57,21 +74,6 @@ const emailMessage=(e)=>{
         movingType='搬寫字樓';
     }
 
-    let pickDes = '';
-    if (e.PickStair)
-        pickDes += '* 沒有電梯 ';
-    if (e.PickPlatform)
-        pickDes += '* 需經平台或樓梯轉電梯 ';
-    if (e.PickFar)
-        pickDes += '* 停車位置距離太遠(50米) ';
-
-    let dropDes = '';
-    if (e.DropStair)
-        dropDes += '* 沒有電梯 ';
-    if (e.DropPlatform)
-        dropDes += '* 需經平台或樓梯轉電梯 ';
-    if (e.DropFar)
-        dropDes += '* 停車位置距離太遠(50米) ';
 
     message = 
     `<p>稱謂: ${e.Title} </p>
