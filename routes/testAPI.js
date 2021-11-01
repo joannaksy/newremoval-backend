@@ -145,7 +145,7 @@ const emailMessage=(e)=>{
     return message;
 }
 
-router.post("/", function(req, res, next) {
+router.post("/send", function(req, res, next) {
     console.log(req.body);
 
     let mailOptions = {
@@ -169,7 +169,7 @@ router.post("/", function(req, res, next) {
 });
 
 
-router.get('/send', function(req, res, next) {
+router.get('/', function(req, res, next) {
     res.send('respond with a resource');
   });
 
